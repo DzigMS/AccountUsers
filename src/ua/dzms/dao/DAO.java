@@ -1,5 +1,7 @@
 package ua.dzms.dao;
 
+import ua.dzms.users.User;
+
 import java.sql.*;
 import java.util.List;
 
@@ -16,9 +18,9 @@ public abstract class DAO<T> {
 
     public abstract List<T> getAll();
 
-    Connection getConnection() {
-        Connection connection = null;
+    public abstract void addUser(User newUser);
 
+    Connection getConnection() {
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/useraccount",
                     "root", "admin");

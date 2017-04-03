@@ -7,15 +7,13 @@ public class User {
     private int id;
     private String firstName;
     private String lastName;
-    private Date dateOfBirth;
+    private LocalDate dateOfBirth;
 
-    public User(String firstName, String lastName, Date dateOfBirth) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.dateOfBirth = dateOfBirth;
+    public User(String firstName, String lastName, LocalDate dateOfBirth) {
+        new User(0, firstName, lastName, dateOfBirth);
     }
 
-    public User(int id, String firstName, String lastName, Date dateOfBirth) {
+    public User(int id, String firstName, String lastName, LocalDate dateOfBirth) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -34,7 +32,7 @@ public class User {
         return lastName;
     }
 
-    public Date getDateOfBirth() {
+    public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
@@ -50,7 +48,7 @@ public class User {
         this.lastName = lastName;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 }
